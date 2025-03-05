@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BodhAI | AI-powered Innovation</title>
+    <style>
+        /* Root Variables for easy theme adjustments */
+        :root {
+            --primary-color: #fff;
+            --secondary-color: #00ff88;
+            --background-color: #000;
+            --border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--primary-color);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 18vw;
+            font-weight: bold;
+            letter-spacing: 10px;
+            opacity: 0.1;
+            position: absolute;
+            white-space: nowrap;
+            animation: fadeIn 3s infinite alternate;
+        }
+
+        .hero-content {
+            z-index: 2;
+            margin-top: 20vh;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .btn {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 2px solid var(--primary-color);
+            margin: 10px;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--background-color);
+            transform: scale(1.05);
+            border-color: var(--secondary-color);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.05;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.15;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 10%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title {
+            width: 50%;
+            font-size: 5vw;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .section-content {
+            width: 50%;
+            font-size: 1.8vw;
+            text-align: left;
+        }
+
+        /* Vision Section */
+        .vision-content {
+            border-left: 2px solid var(--primary-color);
+            padding-left: 40px;
+            font-size: 5vw;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Contact Section */
+        .contact {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 2vw;
+            font-weight: bold;
+            background: #000;
+        }
+
+        .contact-info a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info a:hover {
+            color: #00ff88;
+            transform: scale(1.05);
+        }
+
+        /* Powered By Section */
+        .powered-section {
+            padding: 40px 10%;
+            background-color: #080808;
+            text-align: center;
+        }
+
+        .powered-heading {
+            font-size: 3vw;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .powered-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .powered-links a {
+            color: #777;
+            font-size: 1.5vw;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .powered-links a:hover {
+            color: #aaa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        .footer-links,
+        .footer-links a {
+            display: inline-block;
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2vw;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover,
+        .powered-links a:hover {
+            color: #00ff88;
+            cursor: pointer;
+        }
+
+        .footer-copy {
+            font-size: 0.9vw;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .footer-copy {
+            margin-top: 20px;
+            color: #555;
+            font-size: 0.9vw;
+        }
+
+        .footer-links a:not(:last-child)::after {
+            content: '|';
+            color: #444;
+            margin-left: 10px;
+        }
+
+        .footer-links a:last-child::after {
+            content: '';
+        }
+
+        .footer-social a {
+            display: inline-block;
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2vw;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links,
+        .footer-copy,
+        .footer-copy {
+            margin-bottom: 15px;
+        }
+/*         
+        footer {
+            padding: 40px 10%;
+            background-color: #111;
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">BodhAI</div>
+        <ul>
+            <li><a href="#">BodhAI</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#vision">Vision</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-title">BodhAI</div>
+        <div class="hero-content">
+            <h2>Announcing BodhAI</h2>
+            <div class="btn-group">
+                <a href="#services" class="btn">Learn more</a>
+                <a href="#contact" class="btn">Contact now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-title">Services</div>
+        <div class="section-content">
+            <ul>
+                <li>Generative AI</li>
+                <li>Agentic Solutions</li>
+                <li>Next-gen Applications Powered by AI</li>
+                <li>AGI</li>
+                <li>AI-led Business Transformation</li>
+                <li>Agent-led Business Innovation</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="section">
+        <div class="section-content">
+            <p>
+                **BodhAI: Redefining Intelligence, Unlocking Deeper Understanding**
+                <br><br>
+                At BodhAI, we believe that intelligence isn’t just about processing information—it’s about awakening
+                deeper realization, fostering self-awareness, and evolving with wisdom.
+                <br><br>
+                From our beginnings as pioneers in Artificial General Intelligence (AGI) to shaping the future of
+                self-learning AI, we have always been driven by one core mission: to bridge the gap between artificial
+                intelligence and true understanding.
+                <br><br>
+                As we continue on this journey, we’re not just building AI—we’re shaping the future of intelligence
+                itself.
+            </p>
+        </div>
+        <div class="vision-content">Vision</div>
+    </section>
+
+    <!-- Powered By Section -->
+    <section class="powered-section">
+        <h2 class="powered-heading">Powered by</h2>
+        <div class="powered-links">
+            <a href="https://openai.com" target="_blank">OpenAI</a>
+            <a href="https://www.anthropic.com" target="_blank">Anthropic</a>
+            <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a>
+            <a href="https://deepmind.google/gemini/" target="_blank">Gemini</a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <div>Contact us at</div>
+            <a href="mailto:contact@bodhai.co">contact@bodhai.co</a>
+        </div>
+    </section>
+
+   <!-- Footer Section -->
+<footer>
+    <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-social">
+        <!-- <a href="https://twitter.com" target="_blank">Twitter</a> -->
+        <!-- <a href="https://linkedin.com" target="_blank">LinkedIn</a> -->
+        <a href="https://github.com/git-bodhai" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-copy">
+        © 2025 BodhAI LLC. All Rights Reserved.
+    </div>
+</footer>
+
+</body>
+
+</html>
